@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Arrow Counting</title>
+  </head>
+  <body>
+    <div>Arrow Counting</div>
+    <p id="arrowCounting">Arrow Counting</p>
+  </body>
+  <script>
+    function findRotations(stringValue) {
+        // temporary string is the concatenated string.
+        var temporaryString = stringValue + stringValue;
+        var n = stringValue.length;
+        for (var i = 1; i <= n; i++) {
+          // substring from i index of original
+          // string size.
+          var substring = temporaryString.substring(i ,stringValue.length);
+            // if substring matches with original string
+            // then we will come out of the loop.
+            if (stringValue === (substring)) {
+              return i;
+            }
+        }
+        return n;
+    }
+    var str = "^^<<>>vv";
+    document.getElementById("arrowCounting").innerHTML= findRotations(str);
+  </script>
+</html>
